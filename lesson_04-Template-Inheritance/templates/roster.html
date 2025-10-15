@@ -36,7 +36,7 @@
                 {% for student in students  %}
                     <tr>
                        <td>{{loop.index}}</td>
-                       <td>{{student.First|upper}} {{student.Last|title}}</td>
+                       <td><a href="/students/{{loop.index}}">{{student.First|upper}} {{student.Last|title}}</a></td>
                        <td>{{student.Email}}</td>
                        <td>{{student.Birthday}}</td>
                        <td>{{student.Grade}}</td>
@@ -54,7 +54,7 @@
                         🎉{{student.First|title}} {{student.Last|title}} - {{student.Birthday}}
                     </li>
                 {% endif %}
-            {% else %}
+                {% else %}
                 <li>No Birthday in this month!</li>
             {% endfor %}
         </ul>
